@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Eduardo A. Gomezca\xf1a'
-SITENAME = u'Errata'
+AUTHOR = u'Eduardo A. Gomezcaña'
+SITENAME = u'Otro blog más'
 SITEURL = ''
 
 PATH = 'content'
@@ -14,20 +14,14 @@ DEFAULT_LANG = u'es'
 
 #Theme generation
 
-THEME = './themes/chunk'
-DEFAULT_DATE_FORMAT = ('%b %d %Y')
-SITESUBTITLE = 'Exploraciones de la locura'
-#FOOTER_TEXT = 'Algo así'
-DISPLAY_CATEGORIES_ON_MENU = False
-
-#THEME = './themes/bootlex'
-#ARTICLE_URL = ('{slug}/')
-#ARTICLE_SAVE_AS = ('{slug}.html')
-#PAGE_URL = ('{slug}/')
-#PAGE_SAVE_AS = ('{slug}.html')
-#AUTHOR_URL = ('author/{name}/')
-#TAG_URL = ('tag/{name}/')
-
+THEME = './theme'
+USER_LOGO_URL = SITEURL + '/static/images/logo.png'
+TAGLINE = 'Matemático término medio'
+#For chucnk
+#DEFAULT_DATE_FORMAT = ('%b %d %Y')
+#SITESUBTITLE = 'Exploraciones de la locura'
+##FOOTER_TEXT = 'Algo así'
+#DISPLAY_CATEGORIES_ON_MENU = False
 
 
 # Feed generation is usually not desired when developing
