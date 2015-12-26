@@ -15,14 +15,16 @@ DEFAULT_LANG = u'es'
 #Theme generation
 
 THEME = './theme'
-USER_LOGO_URL = SITEURL + '/static/images/logo.png'
-TAGLINE = 'Matemático término medio'
+USER_LOGO_URL = SITEURL + '/images/logo.png'
+TAGLINE = 'Matemático término medio.'
 #For chucnk
 #DEFAULT_DATE_FORMAT = ('%b %d %Y')
 #SITESUBTITLE = 'Exploraciones de la locura'
 ##FOOTER_TEXT = 'Algo así'
 #DISPLAY_CATEGORIES_ON_MENU = False
 
+# Paths with static content
+STATIC_PATHS = ['images']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

@@ -1,5 +1,6 @@
 Title: Cursos Impartidos
-Updated: 2015-12-26
+Date: 2015-12-26
+
 
 Cursos que he impartido en la FES Acatlán:
 
