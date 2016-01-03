@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Eduardo A. Gomezcaña'
-SITENAME = u'Otro blog más'
+SITENAME = 'ad ignorantiam'
 SITEURL = ''
 
 PATH = 'content'
@@ -15,13 +15,8 @@ DEFAULT_LANG = u'es'
 #Theme generation
 
 THEME = './theme'
-USER_LOGO_URL = SITEURL + '/images/logo.png'
-TAGLINE = 'Matemático término medio.'
-#For chucnk
-#DEFAULT_DATE_FORMAT = ('%b %d %Y')
-#SITESUBTITLE = 'Exploraciones de la locura'
-##FOOTER_TEXT = 'Algo así'
-#DISPLAY_CATEGORIES_ON_MENU = False
+USER_LOGO_URL = SITEURL + '/images/logo2.png'
+TAGLINE = 'Matemático, término medio.'
 
 # Paths with static content
 STATIC_PATHS = ['images']
@@ -36,10 +31,11 @@ TRANSLATION_FEED_ATOM = None
 #         ('Python.org', 'http://python.org/'),)
 
 # Social widget
-#SOCIAL = (('You can add links in your config file', '#'),
-#          ('Another social link', '#'),)
+SOCIAL = (('Mi github', 'http://github.com/egomezcana'),)
 
 DEFAULT_PAGINATION = False
+
+MD_EXTENSIONS = {'math':{}}
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

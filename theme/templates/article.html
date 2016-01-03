@@ -1,5 +1,43 @@
 {% extends "base.html" %}
 {% block head %}
+
+<script type="text/javascript">
+
+  var callMath = function (libs){
+    var l = libs.length;
+    var libsJS = [];
+    for(var i=1; i<l; i++){
+	    lib = libs[i];
+	    libsJS.push(lib + '.js');
+    }
+    window.MathJax = {
+        TeX: {
+            extensions: libsJS
+	},
+	extensions: ["tex2jax.js","AssistiveMML.js"],
+	showMathMenu: false
+    };
+
+    var head = document.getElementsByTagName("head")[0], script;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+    head.appendChild(script);
+  }
+
+  tags = [{% for tag in article.tags %} "{{ tag }}",  {% endfor %}];
+  var l = tags.length;
+  var mathjax = false;
+  for(var i=0; i<l; i++){
+    tag = tags[i];
+    if (tag.slice(0,7) === 'mathjax'){
+      libs = tag.split('-');
+      callMath(libs);
+    }
+  }
+
+</script>
+
 <meta name="keywords" content="{{ article.tags|join(', ')  }}">
 {% endblock %}
 
