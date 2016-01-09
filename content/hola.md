@@ -31,7 +31,7 @@ anterior lo conseguí usando el siguiente código:
 
 	cd pelican-web
 	git clone https://github.com/egomezcana/egomezcana.github.io-src.git
-	git submodule add  https://github.com/egomezcana/egomezcana.github.io-src.git output
+	git submodule add  https://github.com/egomezcana/egomezcana.github.io.git output
 
 Una vez hecho esto, basta inicializar Pelican ejecutando:
 
