@@ -20,7 +20,7 @@ con ganas de experimentar con él.
 Al principio, un generador de contenido estático aparte de Pelican llamó mi atención: Hakyll. Hakyll, escrito es Haskell, me parecía 
 algo más natural pero su curva de aprendizaje resultaba mucho más alta (considerando, claro, que mi fluidez en Haskell no es 
 precisamente aparatosa). Pelican por otro lado, está implementado en Python, un lenguaje sencillo que a veces deja algunos sin sabores, pero
-del cual conozco los suficientes detalles y el cual es lo suficientemente simple. Preferí lo malo por conocido.
+del cual conozco los suficientes detalles y resulta lo suficientemente simple. Preferí lo malo por conocido.
 
 Pelican resultó sencillo de encontrar e instalar, a mí me bastó buscar en los repositorios de Debian. 
 Por simplicidad y como tenía un sitio montado ahí, decidí usar las páginas de GitHub.  Pelican usa archivos base para generar los 
