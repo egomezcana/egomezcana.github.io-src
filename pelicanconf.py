@@ -19,7 +19,10 @@ USER_LOGO_URL = SITEURL + '/images/logo2.png'
 TAGLINE = 'Matemático, término medio.'
 
 # Paths with static content
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images','acatlan']
+
+#To deal with html without process
+READERS = {'html': None}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
