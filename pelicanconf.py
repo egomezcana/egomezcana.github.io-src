@@ -34,7 +34,8 @@ TRANSLATION_FEED_ATOM = None
 #         ('Python.org', 'http://python.org/'),)
 
 # Social widget
-SOCIAL = (('Mi github', 'http://github.com/egomezcana'),)
+SOCIAL = (('GitHub', 'http://github.com/egomezcana'),
+        ('LinkedIn','http://mx.linkedin.com/in/egomezcana/es'))
 
 DEFAULT_PAGINATION = False
 
