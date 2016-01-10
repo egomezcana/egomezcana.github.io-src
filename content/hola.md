@@ -12,15 +12,15 @@ me parecieron primordiales, la primera era  usar alguna variante de \( \TeX \) y
 cómputo para la generación de contenido. A estas dos características les encontré solución usando MathJax y Pelican.
 Pero elegir las herramientas no fue tan sencillo. 
 
-MathJax por un lado me parece algo indeseable, es lento e interpreta el código en el cliente pero tiene la enorme 
-ventaja de contar con una generosa cantidad de librerías. En contraste, KaTeX, el motor de Khan Academy, 
-es increíblemente veloz pero no cuenta con extensiones, el proyecto, sin embargo, tiene buena pinta y me quedé
+MathJax por un lado tiene algo de indeseable, es lento e interpreta el código en el cliente quitando parte del control
+del contenido. Tiene sin embargo una enorme ventaja: Madurez. Encontraste, KaTeX, el motor de Khan Academy, 
+es increíblemente veloz pero no cuenta con suficientes extensiones, el proyecto, sin embargo, tiene buena pinta y quedé
 con ganas de experimentar con él.
 
-Al principio, un generador de contenido estático aparte de Pelican llamó mi atención: Hakyll. Hakyll, escrito es Haskell, me parecía 
+Al principio, un generador de contenido estático, aparte de Pelican, llamó mi atención: Hakyll. Hakyll, escrito es Haskell, me parecía 
 algo más natural pero su curva de aprendizaje resultaba mucho más alta (considerando, claro, que mi fluidez en Haskell no es 
 precisamente aparatosa). Pelican por otro lado, está implementado en Python, un lenguaje sencillo que a veces deja algunos sin sabores, pero
-del cual conozco los suficientes detalles y resulta lo suficientemente simple. Preferí lo malo por conocido.
+del cual conozco los suficientes detalles y el cual es lo suficientemente simple. Preferí lo malo por conocido.
 
 Pelican resultó sencillo de encontrar e instalar, a mí me bastó buscar en los repositorios de Debian. 
 Por simplicidad y como tenía un sitio montado ahí, decidí usar las páginas de GitHub.  Pelican usa archivos base para generar los 
@@ -46,7 +46,7 @@ De las otras, todas fueron rutina y la instalación quedó terminada en este pas
 el archivo `pelicanconf.py` para cambiar los temas, el nombre del blog, etc. para dejar todo en orden.
 Una vez que todo parecía en orden, los archivos para el blog se generaron usando:
 	
-	make htm
+	make html
 	make serve
 
 Lo anterior, aparte de generar los archivos necesarios, abre el puerto 8000 en el servidor local y
@@ -73,8 +73,8 @@ para contradecir a las versiones de los repositorios de Debian, sólo me quedo i
 Descubrí que las plantillas de Pelican son muy sencillas y su motor, Jinja, lo es más. Una de las 
 plantillas lleva el nombre de `article.html` la cual contiene la estructura de como se construye el 
 articulo en base a los archivos .md o .rst, bastaba
-agregar en este archivo el vínculo para conectar MathJax y que las expresiones se interpretaran adecuadamente,
-sin embargo, no me parecía aceptable cargar MathJax en cada artículo, no es un script precisamente ligero. 
+agregar en este archivo el vínculo para conectar MathJax y que las expresiones se interpretaran adecuadamente.
+Sin embargo, no me parecía aceptable cargar MathJax en cada artículo, no es un script precisamente ligero. 
 Noté que la plantilla recibía las etiquetas así que decidí utilizarlas para condicionar la carga de MathJax y no sólo eso, 
 sino cualquier librería que se requiriera en el artículo. Para conseguir esto, agregué el siguiente código en el 
 `{% block head %}` de  `article.html`:

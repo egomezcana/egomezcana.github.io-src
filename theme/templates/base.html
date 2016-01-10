@@ -86,11 +86,16 @@
     {% endblock %}
 
     <div id="ending_message">
-      <p>&copy; {{ AUTHOR }}. Mantenido usando  <a href="http://getpelican.com" target="_blank">Pelican</a>. Tema original por
-      <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">Giulio Fidente</a>. Contacto:
+      <p>&copy; {{ AUTHOR }}. Mantenido usando  <a href="http://getpelican.com" target="_blank">Pelican</a>. Contacto:
       {% for name, link in SOCIAL %}
       <a href="{{ link }}">{{ name }}</a>
       {% endfor %}
+      <a href="http://www.mathjax.org">
+	<img title="Powered by MathJax" src="{{ SITEURL }}/theme/images/mathjax_badge.gif" border="0" alt="Powered by MathJax" />
+      </a>
+      <br />
+      Tema original por
+      <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">Giulio Fidente</a>.
     </div>
   </main>
   {% include "modules/idl.html" %}
