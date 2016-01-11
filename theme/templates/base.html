@@ -90,12 +90,13 @@
       {% for name, link in SOCIAL %}
       <a href="{{ link }}">{{ name }}</a>
       {% endfor %}
-      <a href="http://www.mathjax.org">
-	<img title="Powered by MathJax" src="{{ SITEURL }}/theme/images/mathjax_badge.gif" border="0" alt="Powered by MathJax" />
-      </a>
       <br />
       Tema original por
       <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">Giulio Fidente</a>.
+      Powered by
+      <a href="http://www.mathjax.org">
+	<img title="Powered by MathJax" src="{{ SITEURL }}/images/mathjax_badge.gif" border="0" alt="MathJax" height="10px" />
+      </a>
     </div>
   </main>
   {% include "modules/idl.html" %}
