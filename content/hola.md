@@ -1,4 +1,4 @@
-Title: Hola Mundo (o de como terminó funcionando este blog)
+Title: Hola Mundo (o cómo terminó funcionando este blog)
 Date: 2016-1-2
 Category: Blog
 Tags: mathjax-AMScd
