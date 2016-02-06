@@ -52,7 +52,10 @@
     {{ article.content }}
   </div>
   <div class="article_meta">
-    <p>Publicado el: {{ article.locale_date }}</p>
+    <p>Publicado el {{ article.locale_date }}</p>
+    {% if article.modified %}
+    <p>Modificado el {{ article.modified }}</p>
+    {% endif %}
     <p>Categorias: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
       {% if article.tags %} &ndash; Tags:
       {% for tag in article.tags %}
