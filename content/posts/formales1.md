@@ -25,15 +25,31 @@ la que tenemos más interés de momento. Necesitamos definir un par de operacion
 > **Definición 2**. Para sucesiones \(a\) y \(b\) sobre \(R\), definimos
 > \[ (a + b)_k = a_k + b_k \]
 > y
-> \[ (a \cdot b)_k = \sum_{i=0}a_{k-i}b_{i}\]
+> \[ (a \cdot b)_k = \sum_{i=0}^ka_{k-i}b_{i}\]
 
 Bajo está definición, no es difícil verificar que \( (R[[x]],+,\cdot) \) es un anillo conmutativo. 
-A este anillo se le conoce como el *anillo la series formales de potencia*. La razón es esto es que...
+A este anillo se le conoce como el *anillo la series formales de potencia*. La razón de es esto es que podemos definir
+una sucesión muy particular, *la indeterminada* como
+\[ x = (0,1,0,\ldots).\]
+Esta sucesión satisface
+\[ (x^n)_k = \delta_{nk},\]
+lo que nos permite escribir cada sucesión \( s = (s_0, s_1, \ldots)\) en \( R\) como
+\[ s = \sum_{k=0}^{\infty}s_kx^k.\]
+Esto es un simple formalismo, nada se habla acerca de la convergencia de la suma solamente hemos encontrado una
+forma de expresar una sucesión como si de una suma infinita se tratara pero esto es solamente de *forma*.
 
-Ahora, en un anillo cualquiera, es costumbre definir el producto de un natural por un elemento de anillo \(a\) como
-\[ na = \underbrace{a + \dots + a}_{n} .\]
-Notando que el coeficiente binomial es siempre un entero podemos, dar una definición para otra operación más 
-sobre este peculiar anillo.
+> **Proposición 1**. Sea \( s = \sum_{k=0}^{\infty}s_kx^k\) una serie formal de potencias en \( R\). Entonces,
+> \( s\) es una unidad si y sólo si \( s_0\) es una unidad en \( R\).
 
-> **Definición 3**. Para sucesiones \(a\) y \(b\) sobre \(R\), definimos
-> \[ (a \circ b)_k = a_k + b_k \]
+> *Demostración*. Supongamos que \( s\) es una unidad, en ese caso debe existir otra serie formal \( t\)
+> de forma que \( s t = \mathbf{1}\) o en otras palabras que \( (s t)_k = \delta_{0k}\) en ese caso
+> \( s_0 t_0 = 1\) por lo que debemos concluir que \( s_0\) es una unidad.
+> 
+> Si suponemos ahora que \( s_0\) es una unidad, entonces existe \( r \in R\) tal que \( s_0 r= 1\),
+> definiremos la serie formal  \( t\) de manera recursiva
+> \[ t_0 = r\]
+> \[ t_{k+1} = -r \sum_{i=1}^{k+1}s_it_{k-i+1} \]
+> y afirmamos que ésta satisface \( s t = \mathbf{1}\). En efecto \( (st)_0 = s_0t_0 = s_0r = 1\) y
+> para valores \( n\geq 1\), debemos tener
+> \[ (st)_n = \sum_{k=0}^{n}s_kt_{n-k}\] 
+
