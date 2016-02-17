@@ -53,3 +53,4 @@ forma de expresar una sucesión como si de una suma infinita se tratara pero est
 > para valores \( n\geq 1\), debemos tener
 > \[ (st)_n = \sum_{k=0}^{n}s_kt_{n-k}\] 
 
+
