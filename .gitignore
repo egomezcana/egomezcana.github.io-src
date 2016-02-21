@@ -1,0 +1,11 @@
+#LaTeX files to be ignored
+##########################
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
+*.idx
+*.ilg
+*.ind
+

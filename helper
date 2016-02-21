@@ -1,0 +1,63 @@
+#!/bin/bash
+
+case "$1" in
+
+-t ) 
+	echo "LaTeX to MD";
+	if [ -z ${2+x} ] 
+	then 
+		echo "-t necesita parametro";
+	else
+		IN=content/tex/$2
+		OUT=content/md/${2%%.tex}.md
+		if [ -f $IN ]
+		then
+	    		simpleL2H -i $IN -o $OUT
+		else
+			echo "El archivo no existe."
+			exit 1
+    		fi
+	fi
+    	;;
+-n )  
+	if [ -z ${2+x} ] 
+	then 
+		echo "-n necesita parametro";
+	else
+		OUT=content/posts/$2
+		if [ -f $OUT ]
+		then
+			echo "El archivo ya existe."
+			exit 1
+		else
+			echo "Title: " > $OUT
+			echo "Date: $(date +%Y-%M-%D)" >> $OUT
+			echo "Category: Blog" >> $OUT
+			echo "Tags: " >> $OUT
+			echo "Slug: " >> $OUT
+			echo "Summary: " >> $OUT
+			echo "Status: draft" >> $OUT
+			echo  "MD file created: $OUT";
+		fi
+	fi
+    	;;
+-c )  
+	echo  "Double commiting";
+	if [ -z ${2+x} ] 
+	then 
+		echo "-c necesita parametro";
+	else
+		MSG=$2
+		cd output
+		git add .
+		git commit -m $MSG
+
+		cd ..
+		git add .
+		git commit -m $MSG
+	fi
+     	;;
+*) 
+	echo "WTH!";
+	;;
+esac
