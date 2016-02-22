@@ -9,10 +9,10 @@ case "$1" in
 		echo "-t necesita parametro";
 	else
 		IN=content/tex/$2
-		OUT=content/md/${2%%.tex}.md
+		OUT=content/posts/${2%%.tex}.md
 		if [ -f $IN ]
 		then
-	    		simpleL2H -i $IN -o $OUT
+	    		simpleL2M -i $IN -o $OUT
 		else
 			echo "El archivo no existe."
 			exit 1
