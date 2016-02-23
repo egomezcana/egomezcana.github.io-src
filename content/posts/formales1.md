@@ -39,10 +39,10 @@ operaciones antes de continuar.
 
 Bajo está definición, no es difícil verificar que
 \( (R[[x]],+,\cdot) \) es un anillo conmutativo.
-A este anillo se le conoce como el anillo la
-series formales de potencia. La razón de es esto es
+A este anillo se le conoce como el *anillo la
+series formales de potencia*. La razón de es esto es
 que podemos definir una sucesión muy particular,
-la indeterminada como
+*la indeterminada*, como
 \[ x = (0,1,0,\ldots).\]
 Esta sucesión satisface
 \[ (x^i)_k = \delta_{ik},\]
