@@ -37,7 +37,7 @@ case "$1" in
 			echo "Slug: " >> $OUT
 			echo "Summary: " >> $OUT
 			echo "Status: draft" >> $OUT
-			echo  "MD file created: $OUT";
+			echo  "MD file created: $OUT"
 		fi
 	fi
     	;;
@@ -50,7 +50,12 @@ case "$1" in
 		MSG=$2
 		cd output
 		git add .
-		git commit -m $MSG
+		git commit -m "$MSG"
+		read -p "push?(Yy): " answer
+		if [[ "$answer" == [Yy] ]]
+		then
+			git push			
+		fi
 
 		cd ..
 		git add .
