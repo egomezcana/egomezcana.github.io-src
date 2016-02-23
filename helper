@@ -59,7 +59,7 @@ case "$1" in
 
 		cd ..
 		git add .
-		git commit -m $MSG
+		git commit -m "$MSG"
 	fi
      	;;
 *) 
