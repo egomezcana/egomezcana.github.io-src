@@ -4,7 +4,7 @@
 *.bbl
 *.blg
 *.log
-*.pdf
+content/tex/*.pdf
 *.idx
 *.ilg
 *.ind

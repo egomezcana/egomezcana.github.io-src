@@ -42,12 +42,14 @@ case "$1" in
 	fi
     	;;
 -c )  
-	echo  "Double commiting";
+	echo  "Publish and double commiting";
 	if [ -z ${2+x} ] 
 	then 
 		echo "-c necesita parametro";
 	else
 		MSG=$2
+
+		make publish
 		cd output
 		git add .
 		git commit -m "$MSG"
