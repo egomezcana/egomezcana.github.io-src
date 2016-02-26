@@ -1,0 +1,51 @@
+
+\documentclass[letter,10pt,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage[spanish]{babel}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposición}
+\newtheorem{corollary}{Corolario}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definición}
+\newtheorem{axiom}{Axioma}
+\newtheorem*{example}{Ejemplo}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Comentario}
+
+
+\title{Las patalogías de \( \mathbf{Met}\)}
+\date{}
+
+\begin{document}
+\maketitle
+Si algo me ha perturbado en aprender teoría de categorías, es 
+la abrumadora cantidad de definiciones que hay y de las que
+en un umbral de absoluta ignorancia, pocos contraejemplos
+conozco. Una de ellas, el el condepto de cateogoría balanceada.
+
+\begin{definition}
+  Una categoría \( \mathcal{C}\) se dice \emph{balanceada}
+  si cualquier morfismo \( f \colon A \to B\) en la categoría
+  que sea al mismo tiempo un monomorfismo y epimorfismo
+  es un isomorfismo.
+\end{definition}
+
+Muchas categorías bien conocidas son balanceadas: \( \mathbf{Set}\),
+\( \mathbf{Pos}\), \( \mathbf{Grp}\), etc. Se necesita sentarse
+a pensar si habrá categorías no balanceadas y un ejemplo bastante
+lindo resulta la categoría \( \mathbf{Met}\) formada por
+los espacios métricos como sus objetos y las funciones
+1-Lipschitz como sus morfismos.
+
+\end{document}
+
+
