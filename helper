@@ -2,17 +2,62 @@
 
 case "$1" in
 
+-h )
+	S=$(date +%s.%N)
+	N=0
+	for FILE in content/tex/*.tex
+	do
+		./helper -t $(basename $FILE)
+		N=$((N+1))
+	done
+	D=$(echo "$(date +%s.%N) - $S" | bc)
+
+	echo "Done: Processed $N LaTeX articles to Markdown in $(printf "%0.2f\n" $D) seconds."
+	;;
 -t ) 
-	echo "LaTeX to MD";
 	if [ -z ${2+x} ] 
 	then 
-		echo "-t necesita parametro";
+		S=$(date +%s.%N)
+		N=0
+		for FILE in content/tex/*.tex
+		do
+			BASE=$(basename $FILE)
+			IN=content/tex/$BASE
+			OUT=content/posts/${BASE%%.tex}.md
+			LOG=content/tex/${BASE%%.tex}.pre
+
+			DIN=$(stat -c %Y $IN)
+			DOUT=$(stat -c %Y $OUT)
+
+			if [ $DOUT -lt $DIN  ]
+			then
+				simpleL2M -i $IN | pandoc -f latex -t markdown >> $LOG
+				cat $LOG > $OUT
+				N=$((N+1))
+			fi
+		done
+		D=$(echo "$(date +%s.%N) - $S" | bc)
+		if [ $N -eq 0 ]
+		then
+			echo "Done: Nothing to convert all Markdown up-to-date"
+		else
+			echo "Done: Converted $N LaTeX article(s) to Markdown in $(printf "%0.2f\n" $D) seconds."
+		fi
 	else
 		IN=content/tex/$2
 		OUT=content/posts/${2%%.tex}.md
+		LOG=content/tex/${2%%.tex}.pre
 		if [ -f $IN ]
-		then
-	    		simpleL2M -i $IN -o $OUT
+		then 
+			DIN=$(stat -c %Y $IN)
+			DOUT=$(stat -c %Y $OUT)
+			if [ $DOUT -lt $DIN  ]
+			then
+				simpleL2M -i $IN | pandoc -f latex -t markdown >> $LOG
+				cat $LOG > $OUT
+			else
+				echo "$OUT es más nuevo que $IN"
+			fi
 		else
 			echo "El archivo no existe."
 			exit 1

@@ -44,8 +44,16 @@
         <img src="{{ SITEURL }}/theme/images/logo.png" alt="logo">
         {% endif %}
       </a>
+
       <h2><a href="{{ SITEURL }}">{{ AUTHOR }}</a></h2>
       <p>{{ TAGLINE }}</p>
+
+<!--      <a href="http://math.stackexchange.com/users/63203/egomezcana">
+	<img src="http://math.stackexchange.com/users/flair/63203.png?theme=clean" width="85%"
+	title="profile for egomezcana at Mathematics Stack">
+      </a>
+-->
+
       <ul>
         {% for title, link in MENUITEMS %}
         <li><a href="{{ link }}">{{ title }}</a></li>

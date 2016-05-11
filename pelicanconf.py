@@ -28,6 +28,10 @@ READERS = {'html': None}
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+DEFAULT_DATE = 'fs'
+IGNORE_FILES = ['content/tex/*']
+LOAD_CONTENT_CACHE = False
+MD_EXTENSIONS = ['math(enable_dollar_delimiter=True)']
 
 # Blogroll
 #LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -35,13 +39,11 @@ TRANSLATION_FEED_ATOM = None
 
 # Social widget
 SOCIAL = (('GitHub', 'http://github.com/egomezcana'),
-        ('LinkedIn','http://mx.linkedin.com/in/egomezcana/es'))
+        ('LinkedIn','http://mx.linkedin.com/in/egomezcana/es'),
+        ('MathStack', 'http://math.stackexchange.com/users/63203/egomezcana'),
+        ('+','https://plus.google.com/106680188837746636627'))
 
 DEFAULT_PAGINATION = False
-
-MD_EXTENSIONS = {'math':{}}
-
-IGNORE_FILES = ['content/tex/*']
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

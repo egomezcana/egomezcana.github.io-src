@@ -8,4 +8,5 @@ content/tex/*.pdf
 *.idx
 *.ilg
 *.ind
+*.pre
 

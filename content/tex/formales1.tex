@@ -1,17 +1,12 @@
 
-\documentclass[letter,10pt,notitlepage]{article}
+\documentclass[letter,10pt,notitlepage]{amsart}
 \usepackage[utf8]{inputenc}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[spanish]{babel}
-
-%Tipografía distinta
-%\usepackage{amsopn}
-%\usepackage{mathrsfs}
-%\usepackage{palatino}
-%\usepackage{mathpazo}
+%\usepackage{geometry}
 
 \newtheorem{theorem}{Teorema}
 \newtheorem{lemma}{Lema}
@@ -27,23 +22,33 @@
 \newtheorem*{remark}{Comentario}
 
 
-\title{Series formales de potencia 1}
-\date{}
+\title{Series formales de potencia: Definiciones y un ejemplo }
+\date{10-mar-2016}
+\keywords{Series formales,anillos}
 
 \begin{document}
+\begin{abstract}
+  Es notable que en el marco de las series
+  formales de potencia, puedan aparecer
+  objetos formales que de alguna forma representan
+  las aproximaciones de funciones. Con este tipo
+  de resultados podemos manipular las series
+  de potencia de manera algebraica olvidándonos 
+  por un momento de la indumentaria analítica.
+\end{abstract}
 \maketitle
 
-En el proceso de revisión de una tesis para la que 
-recientemente fui nombrado sinodal (¿?) me topé con 
-el tema. Había algunos detalles quisquillosos que resolver
-y que resultan profundamente interesante delinearlos. 
-El objetivo de la publicación es simplemente ordenar 
-estas idea.
+Hay una idea muy interesante cuando se
+estudia el anillo de series formales de potencia:
+La existencia de unidades. Estas unidades nos 
+permiten dar una versión algebraica de la aproximación
+de algunas funciones sin necesidad de hablar de
+convergencia.
 
-Sin más preámbulo, se considerará desde ahora \( R\) 
+Consideraremos para esto \( R\) 
 como un anillo conmutativo y por cuestiones puramente 
-sentimentales, para mi los anillos vienen acompañados de 
-un elemento unitario (sentimentalismo categórico). 
+sentimentales, asumiremos que los anillos siempre vienen 
+acompañados de un elemento unitario (sentimentalismo categórico). 
 Se construirá sobre este anillo el denominado anillo 
 de las series formales de potencia.
 
@@ -55,15 +60,16 @@ de las series formales de potencia.
 \end{definition}
 
 Para una sucesión \(a\) sobre \(R\), se acostumbra 
-escribir \(a_k = a(k)\). Se acostumbra también, escribir
-\[ a = (a_0,a_1, \dots )\]
-para considerar a una sucesión como 
-\emph{una tupla con un número infinito de componentes}. 
+escribir \(a_k = a(k)\). Es también contrumbre representar
+a la sucesión como una tupla con infinito números de 
+entradas:
+\[ a = (a_0,a_1, \dots ).\]
 Sin embargo, existe una caracterización en la que tenemos 
 más interés de momento. Necesitamos definir un par de 
 operaciones antes de continuar.
 
 \begin{definition}
+  \label{OP}
   Para sucesiones \(a\) y \(b\) sobre \(R\), definimos
   \[ (a + b)_k = a_k + b_k \]
   y
@@ -72,23 +78,51 @@ operaciones antes de continuar.
 
 Bajo está definición, no es difícil verificar que 
 \( (R[[x]],+,\cdot) \) es un anillo conmutativo. 
-A este anillo se le conoce como el \emph{anillo la 
-series formales de potencia}. La razón de es esto es 
-que podemos definir una sucesión muy particular, 
+Además, podemos distinguir a un elemento particular
+de este conjunto, denominado
 \emph{la indeterminada}, como
 \[ x = (0,1,0,\ldots).\]
-Esta sucesión satisface
-\[ (x^i)_k = \delta_{ik},\]
-lo que nos permite escribir cada sucesión 
-\( a = (a_0, a_1, \ldots)\) en \( R\) como
-\[ a = \sum_{i=0}^{\infty}a_ix^i.\]
-Esto es un simple formalismo, nada se habla acerca 
-de la convergencia de la suma solamente hemos encontrado una
-forma de expresar una sucesión como si de una suma 
-infinita se tratara pero esto es solamente de \emph{forma}.
+Para ésta, definimos también \( x^0 = 1\), \( x^1 = x\) y
+de manera recusriva \( x^{m+1} = x \cdot x^m \).
 
 \begin{proposition}
-  Sea \( a = \sum_{i=0}^{\infty}s_ix^i\) una serie 
+  Para cualquier pareja de enteros no negativos
+  \( j\) y \( k\) se cumple:
+  \[ (x^j)_k = \delta_{jk}.\]
+\end{proposition}
+\begin{proof}
+  Procedemos por inducción sobre \( j\). Por definición
+  \( x^0 = 1\) por lo que el resultado sigue. Supongamos
+  \( (x^j)_k = \delta_{jk}\) para cualquier \( k\), entonces
+  \begin{align*}
+    (x^{j+1})_k &= (x \cdot x^{j})_k \\
+    &= \sum_{i=0}^{k} x_{k-i}(x^{j})_{i} \\
+    &= \sum_{i=0}^{k} x_{k-i}\delta_{ji} \\
+    &= x_{k-j} \\
+  \end{align*}
+  Ademas,  \( x_{k-j} = \delta_{1(k-j)} = \delta_{(j+1)k}\),
+  de lo que \( (x^{j+1})_k = \delta_{(j+1)k}\). Lo anterior
+  es lo que buscábamos y por inducción la proposición sigue. Q.E.D.
+\end{proof}
+
+La proposición anterior, se puede usar para garantizar que
+todos los elementos de \( R\left[ [x] \right]\)
+se pueden expresar como ``combinaciones lineales''
+del conjunto 
+\[  \{1,x,x^2,\dots,x^n,\dots\}.\] 
+Este hecho nos permite escribir una sucesión cualquiera
+sobre \( R\),
+\[ a = (a_0, a_1, \ldots)\]  como
+\[ a = \sum_{i=0}^{\infty}a_ix^i.\]
+Esto es un simple formalismo, nada se habla acerca 
+de la convergencia de la suma y solamente hemos encontrado una
+forma de expresar una sucesión en términos peculiares. 
+Por la que se denomina a \( R\left[ [x] \right]\) como 
+\emph{el anillo las series formales de potencia}.
+
+\begin{proposition}
+  \label{PR}
+  Sea \( a = \sum_{i=0}^{\infty}a_ix^i\) una serie 
   formal de potencias en \( R\). Entonces, \( a\) es una 
   unidad en \( R\left[[x]\right]\) si y sólo si \( a_0\) es 
   una unidad en \( R\).
@@ -116,24 +150,34 @@ infinita se tratara pero esto es solamente de \emph{forma}.
     	& = a_0b_k+ \sum_{i=1}^{k}a_{i}b_{k-i} \\
 	& = 0
   \end{align*}
-  como afirmamos. En ese caso la serie formal de potencia 
+  como afirmamos. En ese caso, la serie formal de potencia 
   \( a\) presenta como inversa a la serie formal \( b\) por 
   lo que resulta una unidad en \( R\left[[x]\right]\)
-  como buscábamos.
+  como buscábamos. Q.E.D.
 \end{proof} 
 
-La proposición anterior da una interesante caracterización
-de algunas series. Por ejemplo, es común afirmar en una
-discusión análitica que
-\[ \frac{1}{1-x} = 1 + x + x^2 + \dots;\]
-es notable que a la sombra de este resultado, que sea
-eso lo que sucede precisamente en \( R\left[ [x] \right]\).
-Debemos primero identificar la sucesión
-\[ 1 - x = (1,-1,0,0,\dots)\]
-la cual, de acuerdo a la propisición tiene inversa, la
-cual puede ser calculada usando la prueba de ésta como
-\[ (1-x)^{-1} = (1, 1, 1, \dots),\]
-la cual representa a la serie que intuitivamente conocemos.
+\begin{example}
+  Es común afirmar en una
+  discusión analítica que
+  \[ \frac{1}{1-x} = 1 + x + x^2 + \dots\]
+  siendo la sucesión de la derecha una aproximación
+  polinomial a la función de la izquierda. Para dar
+  sentido a esta expresión se requiere dar un elaborado
+  argumento de convergencia. Sin embargo, 
+  a la sombra del resultado anterior, la sucesión
+  \( (1-x)\) cumple con las hipótesis por lo que debe
+  poseer una inversa en \( R\left[ [x] \right]\),
+  la cual puede ser calculada identificando
+  \[ 1 - x = (1,-1,0,0,\dots)\]
+  lo cual resulta en obtener
+  \[ (1-x)^{-1} = (1, 1, 1, \dots),\]
+  lo cual se acostumbra representar como
+  \[ \frac{1}{1-x} = 1 + x + x^2 + \dots.\]
+  Es sorprendente que la definición \ref{OP} haga 
+  posible hablar de manera simbólica de objetos sin
+  mencionar siquiera la convergencia.
+\end{example}
+
 \end{document}
 
 

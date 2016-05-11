@@ -8,7 +8,7 @@ Summary: Primera entrada del blog donde se explican algunos ajustes que se reali
 Todavía no decido que haré con este blog. Es interesante sin embargo que uno puede realizar notas
 para recordarlas después, y una que me interesa lo suficiente es como conseguí que el blog funcionara, algo así
 como un «hola mundo». Bueno, tonteras de lado, debía responder primero qué necesitaba para el blog. Dos cosas
-me parecieron primordiales, la primera era  usar alguna variante de \( \TeX \) y la segunda tener el control del 
+me parecieron primordiales, la primera era  usar alguna variante de $ \TeX $ y la segunda tener el control del 
 cómputo para la generación de contenido. A estas dos características les encontré solución usando MathJax y Pelican.
 Pero elegir las herramientas no fue tan sencillo. 
 
@@ -68,7 +68,7 @@ En este punto sólo quedaba realizar el primer `commit` que en este caso es un p
 Inmediatamente después, el blog ya podía ser consultado en línea. Realmente fue simple.
 
 Agregar MathJax al blog no fue miel sobre hojuelas. En principio existe un plugn-in para usar
-\(\TeX / \LaTeX\) con Pelican, pero requería la versión 3.6.0 y en estos días me falta ímpetu 
+$\TeX / \LaTeX$ con Pelican, pero requería la versión 3.6.0 y en estos días me falta ímpetu 
 para contradecir a las versiones de los repositorios de Debian, sólo me quedo ingeniármelas. 
 Descubrí que las plantillas de Pelican son muy sencillas y su motor, Jinja, lo es más. Una de las 
 plantillas lleva el nombre de `article.html` la cual contiene la estructura de como se construye el 
@@ -92,6 +92,10 @@ sino cualquier librería que se requiriera en el artículo. Para conseguir esto,
 	        TeX: {
 	            extensions: libsJS
 	        },
+		tex2jax: {
+	  	    inlineMath: [['$','$'], ['\\(','\\)']],
+		    processEscapes: true
+		},
 	        extensions: ["tex2jax.js","AssistiveMML.js"],
 	        showMathMenu: false
 	    };
@@ -122,7 +126,7 @@ MathJax. Además, si la etiqueta contiene guiones, los separa y los considera li
 finalmente al archivo de configuración de MathJax. Por ejemplo, si una de las etiquetas es `mathjax-AMScd`, 
 la carga de MathJax se realiza solicitando, además, la librería `AMScd.js` que permite el uso de diagramas conmutativos 
 (lo cual es una verdadera maravilla). También, para evitar que el procesamiento de markdown afecte el contenido 
-escrito en \(\TeX\), es necesario instalar la extensión de `python-markdown` llamada `math` 
+escrito en $\TeX$, es necesario instalar la extensión de `python-markdown` llamada `math` 
 (no es oficial, es de terceros) la cual se puede conseguir de manera muy sencilla con `pip` ejecutando
 
 	pip install python-markdown-math
@@ -130,7 +134,7 @@ escrito en \(\TeX\), es necesario instalar la extensión de `python-markdown` ll
 y modificando el archivo `pelicanconf.py` para incluirla en el procesamiento de markdown,
 agregando la linea
 
-	MD_EXTENSIONS = { 'math' : {} }
+	MD_EXTENSIONS = {'math':{'enable_dollar_delimiter': True}}
 
 Con esto, los caracteres que indican expresiones matemáticas no son tomados en cuenta durante el
 procesamiento de markdown y son posteriormente interpretados por MathJax una vez que la página se ha
@@ -145,12 +149,12 @@ alguna librería. Una día de estos...
 
 
 Por cierto. Santos diagramas conmutativos batman:
-\[
+$$
 \begin{CD}
 A     @>f>>  B\\
 @VVhV        @VViV\\
 C     @>g>>  D
 \end{CD}
-\]
+$$
 
 
