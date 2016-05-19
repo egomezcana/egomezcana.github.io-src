@@ -1,10 +1,9 @@
-title: El problema de las relaciones de recurrencia
+title: Recurrencia 1: El problema de las relaciones de recurrencia
 category: blog
 slug: recurrencia
 tags: ecuaciones en diferencias,relaciones de recurrencia,mathjax
 status: published
 date: 3-May-2016
-summary: Una breve exploración de la formulación de una ecuación en diferencias como problema y en analogía a una ecuación diferencial.
 
 Curioseando un poco en temas de matemáticas discretas, encontré poca
 información acerca de como definir correctamente una relación de

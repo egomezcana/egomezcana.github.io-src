@@ -4,7 +4,6 @@ slug: formales1
 tags: Series formales,anillos,mathjax
 status: published
 date: 10-mar-2016
-summary: Es notable que en el marco de las series formales de potencia, puedan aparecer objetos formales que de alguna forma representan las aproximaciones de funciones. Con este tipo de resultados podemos manipular las series de potencia de manera algebraica olvidándonos por un momento de la indumentaria analítica.
 
 Hay una idea muy interesante cuando se estudia el anillo de series
 formales de potencia: La existencia de unidades. Estas unidades nos

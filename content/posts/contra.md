@@ -3,7 +3,6 @@ category: blog
 slug: contra
 tags: Categorías,espacios métricos,mathjax-AMScd
 status: draft
-summary: Esto puede funcionar bien
 
 Si algo me ha perturbado en aprender teoría de categorías, es la
 abrumadora cantidad de definiciones que hay y de las que en un umbral de

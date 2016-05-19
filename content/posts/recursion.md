@@ -1,10 +1,9 @@
-title: Ecuaciones en diferencias y el teorema de recursión
+title: Recurrencia 2: Ecuaciones en diferencias y el teorema de recursión
 category: blog
 slug: recursion
 tags: ecuaciones en diferencias, relaciones de recurrencia,recursión,mathjax
 status: published
 date: 9-may-2016
-summary: Presentación de un teorema que garantiza la existencia y unicidad de las soluciones de las ecuaciones en diferencias como se presentarón con anterioridad.
 
 Curioseando un poco más con las analogías entre los problemas de
 ecuaciones diferenciales y ecuaciones en diferencias, me encontré con
