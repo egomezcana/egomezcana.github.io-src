@@ -27,7 +27,13 @@ case "$1" in
 			LOG=content/tex/${BASE%%.tex}.pre
 
 			DIN=$(stat -c %Y $IN)
-			DOUT=$(stat -c %Y $OUT)
+
+			if [ -f $OUT ]
+			then
+				DOUT=$(stat -c %Y $OUT)
+			else
+				DOUT=0
+			fi
 
 			if [ $DOUT -lt $DIN  ]
 			then

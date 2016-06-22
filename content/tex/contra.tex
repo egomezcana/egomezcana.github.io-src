@@ -21,7 +21,7 @@
 \newtheorem*{remark}{Comentario}
 
 
-\title{Patología en una categoría de espacios métricos.}
+\title{Espacios métricos como contraejemplos I}
 \date{}
 \keywords{Categorías,espacios métricos}
 
@@ -44,9 +44,85 @@ Muchas categorías bien conocidas son balanceadas: \( \mathbf{Set}\),
 \( \mathbf{Pos}\), \( \mathbf{Grp}\), etc. Se necesita sentarse
 a pensar si habrá categorías no balanceadas y un ejemplo bastante
 lindo resulta la categoría \( \mathbf{Met}\) formada por
-los espacios métricos como sus objetos y las funciones
-1-Lipschitz como sus morfismos.
+los espacios métricos como sus objetos y los morfismos métricos
+como sus morfismos.
+
+\begin{definition}
+  Sean \( A\) y \( B\) espacios métricos y sea
+  \( f \colon A \to B\). Entonces, \( f\) se dice \emph{un
+  morfismo métrico} si 
+  \[ d_B(f(x),f(y)) \leq d_A(x,y).\]
+\end{definition}
+
+Para determinar si es o no balanceada necesitamos caracterizar
+los isomorfismos, lo mismo que los monomorfismos y epimorfismos en 
+\( \mathbf{Met}\). 
+
+\begin{lemma}
+  Sean \( A\) y \( B\) espacios métricos y sea \( f \colon A \to B\)
+  un morfismo métrico. Entonces, \( f\) es un isomorfismo
+  si y sólo si  \( f\) es biyectiva y una isometría.
+\end{lemma}
+\begin{proof}
+  Por un lado, si \( f\) es un isomorfimo, entonces es invertible y 
+  su inversa es un morfismo métrico. Esto implica que
+  \begin{align*}
+    d_A(x,y) &= d_A\left( f^{-1}(f(x)), f^{-1}(f(y)) \right) \\
+    	&\leq d_B(f(x),f(y)) \\
+	& \leq d_A(x,y)
+  \end{align*}
+  por lo que \( d_A(x,y) = d_B(f(x),f(y))\), mostrando que \( f\)
+  es una isometría como buscábamos. Ahora, si \( f\) es biyectiva y 
+  una isometría, entonces su inversa debe ser de igual forma una
+  isometría y por tanto un morfismo métrico; en otras palabras
+  es un isomorfismo en \( \mathbf{Met}\).
+\end{proof}
+
+\begin{lemma}
+  Sean \( A\) y \( B\) espacios métricos y sea \( f \colon A \to B\)
+  un morfismo métrico. Entonces, \( f\) es un monomorfismo si
+  \( f\) es inyectiva.
+\end{lemma}
+\begin{proof}
+  Al ser \( f\) inyectiva, \( f \circ g_1 = f \circ g_2\) implica
+  que \( g_1 = g_2\), resultando un monomorfismo.
+\end{proof}
+
+\begin{lemma}
+  Sean \( A\) y \( B\) espacios métricos y sea \( f \colon A \to B\)
+  un morfismo métrico. Entonces \( f\) es un epimorfismo si
+  el conjunto \( \mathrm{im}(f)\) es denso.
+\end{lemma}
+\begin{proof}
+  Supongamos que \( g_1,g_2 \colon B \to C\) son morfismos métricos de forma
+  que \( g_1 \circ f = g_2 \circ f\). Debemos probar que \( g_1 = g_2\) y
+  para conseguir esto tomamos \( b \in B\) y \( \varepsilon>0\). Como
+  la imagen es densa, entonces existe \( a \in A\) de forma que
+  \[ d_B(f(a),b) < \frac{\varepsilon}{2},\]
+  de esta forma podemos tomar \( s = g_1(f(a)) = g_2(f(a))\) y en
+  consecuencia
+  \begin{align*}
+    d_C(g_1(b),g_2(b)) &\leq d_C(g_1(b), s) + d_C(s,g_2(b)) \\
+    &\leq d_B(b,f(a)) + d_B(f(a),b) \\
+    &< \varepsilon.
+  \end{align*}
+  Como la elección de \( \varepsilon\) fue arbitraria, podemos
+  concluir que \( d_C(g_1(b),g_2(b)) = 0\) o en otras palabras
+  \( g_1(b) = g_2(b)\). En conclusión, \( g_1 \circ f = g_2 \circ f\)
+  implica \( g_1 = g_2\) mostrando que \( f\) es un epimorfismo.
+\end{proof}
+
+Basta ahora considerar la inclusión \( i \colon \mathbb{Q} \to \mathbb{R}\)
+la cual es un morfismo métrico. Como es inyectiva, lo anterior nos
+permite concluir que debe ser un monomorfismo, además la imagen de \( i\)
+es densa por lo que debe ser de igual forma un epimorfismo.  Sin embargo,
+sin embargo, \( i\) no es una transformación congruente al no ser biyectiva.
+Lo anterior permite concluir que:
+
+
+\begin{theorem}
+  La categoría \( \mathbf{Met}\) no es balanceada.
+\end{theorem}
 
 \end{document}
-
 
