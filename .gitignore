@@ -10,3 +10,6 @@ content/tex/*.pdf
 *.ind
 *.pre
 
+#Emacs
+*~
+

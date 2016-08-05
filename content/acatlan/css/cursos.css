@@ -25,13 +25,13 @@ header h1 {
 }
 
 main {
-	width : 55%;
+	width : 65%;
 }
 
 aside {
 	float : right;
 	position : relative;
-	width : 40%;
+	width : 30%
 }
 
 footer {
