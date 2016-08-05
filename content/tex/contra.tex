@@ -1,10 +1,10 @@
-\documentclass[draft,letter,10pt,notitlepage]{amsart}
+\documentclass[letter,10pt,notitlepage]{amsart}
 \usepackage[utf8]{inputenc}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amscd}
+%\usepackage{amscd}
 \usepackage[spanish]{babel}
 
 \newtheorem{theorem}{Teorema}
@@ -21,9 +21,9 @@
 \newtheorem*{remark}{Comentario}
 
 
-\title{Espacios métricos como contraejemplos I}
+\title{Espacios métricos como contraejemplos I: Categorías balanceadas}
 \date{}
-\keywords{Categorías,espacios métricos}
+\keywords{Categorías,espacios métricos,contraejemplos}
 
 \begin{document}
 \maketitle
@@ -31,7 +31,7 @@
 Si algo me ha perturbado en aprender teoría de categorías, es 
 la abrumadora cantidad de definiciones que hay y de las que
 en un umbral de absoluta ignorancia, pocos contraejemplos
-conozco. Una de ellas, es el concepto de cateogoría balanceada.
+conozco. Una de ellas, es el concepto de categoría balanceada.
 
 \begin{definition}
   Una categoría \( \mathcal{C}\) se dice \emph{balanceada}
@@ -71,11 +71,11 @@ los isomorfismos, lo mismo que los monomorfismos y epimorfismos en
     	&\leq d_B(f(x),f(y)) \\
 	& \leq d_A(x,y)
   \end{align*}
-  por lo que \( d_A(x,y) = d_B(f(x),f(y))\), mostrando que \( f\)
+  por tanto \( d_A(x,y) = d_B(f(x),f(y))\). Lo anterior muestra que \( f\)
   es una isometría como buscábamos. Ahora, si \( f\) es biyectiva y 
   una isometría, entonces su inversa debe ser de igual forma una
   isometría y por tanto un morfismo métrico; en otras palabras
-  es un isomorfismo en \( \mathbf{Met}\).
+  es un isomorfismo en \( \mathbf{Met}\). Q.E.D.
 \end{proof}
 
 \begin{lemma}
@@ -85,7 +85,7 @@ los isomorfismos, lo mismo que los monomorfismos y epimorfismos en
 \end{lemma}
 \begin{proof}
   Al ser \( f\) inyectiva, \( f \circ g_1 = f \circ g_2\) implica
-  que \( g_1 = g_2\), resultando un monomorfismo.
+  que \( g_1 = g_2\), resultando un monomorfismo. Q.E.D.
 \end{proof}
 
 \begin{lemma}
@@ -96,29 +96,32 @@ los isomorfismos, lo mismo que los monomorfismos y epimorfismos en
 \begin{proof}
   Supongamos que \( g_1,g_2 \colon B \to C\) son morfismos métricos de forma
   que \( g_1 \circ f = g_2 \circ f\). Debemos probar que \( g_1 = g_2\) y
-  para conseguir esto tomamos \( b \in B\) y \( \varepsilon>0\). Como
-  la imagen es densa, entonces existe \( a \in A\) de forma que
-  \[ d_B(f(a),b) < \frac{\varepsilon}{2},\]
-  de esta forma podemos tomar \( s = g_1(f(a)) = g_2(f(a))\) y en
+  para conseguir esto, tomamos \( x \in B\) y \( \varepsilon>0\) y afirmamos
+  que \( d_C(g_1(x),g_2(x)) < \varepsilon\). En efecto, como
+  la imagen es densa, entonces existe \( y \in A\) de forma que
+  \[ d_B(f(y),x) < \frac{\varepsilon}{2},\]
+  de esta forma podemos tomar \( z = g_1(f(a)) = g_2(f(a))\) y en
   consecuencia
   \begin{align*}
-    d_C(g_1(b),g_2(b)) &\leq d_C(g_1(b), s) + d_C(s,g_2(b)) \\
-    &\leq d_B(b,f(a)) + d_B(f(a),b) \\
-    &< \varepsilon.
+    d_C(g_1(x),g_2(x)) &\leq d_C(g_1(x), z) + d_C(z,g_2(x)) \\
+    &\leq d_B(x,f(y)) + d_B(f(y),x) \\
+    &< \varepsilon,
   \end{align*}
-  Como la elección de \( \varepsilon\) fue arbitraria, podemos
-  concluir que \( d_C(g_1(b),g_2(b)) = 0\) o en otras palabras
-  \( g_1(b) = g_2(b)\). En conclusión, \( g_1 \circ f = g_2 \circ f\)
-  implica \( g_1 = g_2\) mostrando que \( f\) es un epimorfismo.
+  mostrando con esto nuestra afirmación. Ahora, 
+  como la elección de \( \varepsilon\) fue arbitraria, podemos
+  concluir que \( d_C(g_1(x),g_2(x)) = 0\) o en otras palabras
+  \( g_1(x) = g_2(x)\). Siendo la elección de \( x\) arbitraria,
+  podemos también concluir que \( g_1 \circ f = g_2 \circ f\)
+  implica \( g_1 = g_2\) mostrando que \( f\) es un epimorfismo. Q.E.D.
 \end{proof}
 
 Basta ahora considerar la inclusión \( i \colon \mathbb{Q} \to \mathbb{R}\)
 la cual es un morfismo métrico. Como es inyectiva, lo anterior nos
 permite concluir que debe ser un monomorfismo, además la imagen de \( i\)
-es densa por lo que debe ser de igual forma un epimorfismo.  Sin embargo,
-sin embargo, \( i\) no es una transformación congruente al no ser biyectiva.
-Lo anterior permite concluir que:
-
+es densa y en consecuencia un epimorfismo.  Sin embargo, 
+\( i\) no es biyectiva por lo que no puede ser un isomorfismo. Esto
+quiere decir que existen morfismos métricos que resultan monomorfismos
+y epimorfismos pero no isomorfismos. En otras palabras:
 
 \begin{theorem}
   La categoría \( \mathbf{Met}\) no es balanceada.
