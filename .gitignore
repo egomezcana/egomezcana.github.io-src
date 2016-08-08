@@ -65,5 +65,4 @@ flycheck_*.el
 *.bbl
 *.blg
 *.log
-*.pdf
 *#*#
