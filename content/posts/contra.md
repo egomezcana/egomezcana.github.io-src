@@ -1,8 +1,9 @@
-title: Espacios métricos como contraejemplos I: Categorías balanceadas
+title: Contraejemplos: Categorías balanceadas
 category: blog
 slug: contra
 tags: Categorías,espacios métricos,contraejemplos,mathjax
 status: published
+date: 5-5-2016
 
 Si algo me ha perturbado en aprender teoría de categorías, es la
 abrumadora cantidad de definiciones que hay y de las que en un umbral de

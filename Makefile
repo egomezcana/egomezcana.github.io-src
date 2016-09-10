@@ -57,7 +57,7 @@ help:
 tex:
 	@./helper -t
 
-html: 
+html: tex 
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:

@@ -42,12 +42,13 @@ reales juegan un rol importante en las ecuaciones diferenciales por toda
 la estructura que acarrean, sin embargo en el caso discreto parecen ser
 inconsecuentes a menos que se quiera resolver el caso continuo a través
 de una aproximación usando el caso discreto. Parece entonces razonable
-librarnos de $ \mathbb{R}$ y establecer un caso más general.
+relajar la elección de $ \mathbb{R}$ y usar en su lugar un anillo
+cualquiera.
 
-**Definición.** Sea $ A$ conjunto cualquiera y sea
-$ g \colon A^{k+1} \times \mathbb{N} \to A$. *Una ecuación en
-diferencias ordinaria sobre $ A$* es el problema de encontrar una
-sucesión $ f \colon \mathbb{N} \to A$ de forma que para todo
+**Definición.** Sea $ R$ un anillo cualquiera y sea
+$ g \colon R^{k+1} \times \mathbb{N} \to R$. *Una ecuación en
+diferencias ordinaria sobre $ R$* es el problema de encontrar una
+sucesión $ f \colon \mathbb{N} \to R$ de forma que para todo
 $ n \in \mathbb{N}$, $$g(f(n), \dots, f(n+k),n) = 0.$$
 
 La igualdad $ g(f(n), \dots, f(n+k),n) = 0$ establece una relación entre
@@ -68,7 +69,7 @@ Continuando con la analogía, podemos ir todavía más lejos definiendo
 las potenciales soluciones.
 
 **Definición.** Sea
-$ g \colon A^{(k+1)(l+1)} \times \mathbb{N}^2 \to \mathbb{A}$. *Una
+$ g \colon R^{(k+1)(l+1)} \times \mathbb{N}^2 \to \mathbb{R}$. *Una
 ecuación en diferencias parciales en dos variables sobre $ A$* es el
 problema de encontrar una doble sucesión $ u \colon \mathbb{N}^2 \to A$
 de forma que para todo $ n,m \in \mathbb{N}$,
