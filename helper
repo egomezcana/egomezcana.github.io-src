@@ -104,15 +104,16 @@ case "$1" in
 		cd output
 		git add .
 		git commit -m "$MSG"
-		read -p "push?(Yy): " answer
-		if [[ "$answer" == [Yy] ]]
-		then
-			git push			
-		fi
-
 		cd ..
 		git add .
 		git commit -m "$MSG"
+		read -p "push?(Yy): " answer
+		if [[ "$answer" == [Yy] ]]
+		then
+			cd output
+			git push
+			cd ..			
+		fi	
 	fi
      	;;
 *) 
